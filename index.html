@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <title>Clonernews</title>
+  </head>
+  <body>
+    <div id="header">
+      <h2><a id="logo">Cloner News</a></h2>
+      <div id="categoriesSelector">
+        <button id="newsButton">news</button>
+        <button id="jobsButton">jobs</button>
+        <button id="pollsButton">polls</button>
+      </div>
+    </div>
+
+    <div class="popUp" id="popUp">
+      <div class="popUpContainer" id="popUpContainer"></div>
+    </div>
+
+    <div id="content"></div>
+    <div id="loading" class="loading">
+      <div class="loading-spinner"></div>
+      <span>loading content...</span>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

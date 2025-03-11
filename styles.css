@@ -1,0 +1,241 @@
+/* Minimal Monochrome Theme */
+:root {
+  --bg: #111111;
+  --bg-card: #1a1a1a;
+  --accent: #ffffff;
+  --text: #f0f0f0;
+  --text-secondary: #999999;
+  --border: #333333;
+  --radius: 0;
+  --font-sans: "IBM Plex Mono", monospace;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-sans);
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+  padding-bottom: 30px;
+}
+
+/* Header */
+#header {
+  background: var(--bg);
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  border-bottom: 1px solid var(--border);
+}
+
+#title {
+  color: var(--accent);
+  text-decoration: none;
+  font-size: 1.25rem;
+  font-weight: 400;
+  cursor: pointer;
+  letter-spacing: -0.5px;
+}
+
+#categoriesSelector {
+  display: flex;
+  gap: 20px;
+}
+
+#categoriesSelector button {
+  background: transparent;
+  color: var(--text);
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-size: 0.875rem;
+  font-weight: 400;
+  text-transform: lowercase;
+  position: relative;
+}
+
+#categoriesSelector button:hover {
+  color: var(--accent);
+}
+
+#categoriesSelector button:hover::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 100%;
+  height: 1px;
+  background: var(--accent);
+}
+
+/* Content */
+#content {
+  max-width: 700px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+/* Posts */
+.post {
+  background: var(--bg-card);
+  padding: 24px;
+  margin-bottom: 24px;
+  border-bottom: 1px solid var(--border);
+}
+
+.postTitle {
+  font-size: 1.125rem;
+  font-weight: 400;
+  margin-bottom: 12px;
+  letter-spacing: -0.5px;
+}
+
+.postAuthor,
+.postDate {
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+  margin-bottom: 4px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.postText {
+  margin: 16px 0;
+  color: var(--text);
+  font-size: 0.9375rem;
+}
+
+.postUrl {
+  display: inline-block;
+  color: var(--text);
+  text-decoration: none;
+  margin-top: 12px;
+  padding: 8px 0;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border-bottom: 1px solid var(--text-secondary);
+}
+
+.postUrl:hover {
+  color: var(--accent);
+  border-color: var(--accent);
+}
+
+/* Comments */
+.commentContainer {
+  margin-top: 20px;
+  border-top: 1px solid var(--border);
+  padding-top: 20px;
+}
+
+.comment {
+  background: var(--bg);
+  padding: 16px;
+  margin: 12px 0;
+  border-left: 1px solid var(--border);
+}
+
+/* Poll options */
+.pollOpt {
+  background: var(--bg);
+  padding: 12px 16px;
+  margin: 10px 0;
+  border-left: 1px solid var(--border);
+}
+
+/* Buttons */
+button {
+  background: transparent;
+  color: var(--text);
+  border: none;
+  padding: 8px 0;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+button:hover {
+  color: var(--accent);
+}
+
+/* Popup */
+.popUp {
+  position: fixed;
+  top: 80px;
+  right: 24px;
+  background: var(--bg-card);
+  color: var(--text);
+  padding: 16px 24px;
+  z-index: 1000;
+  display: none;
+  animation: fadeIn 0.3s;
+  border: 1px solid var(--border);
+}
+
+/* Loading */
+.loading {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  padding: 30px;
+  margin: 20px 0;
+  color: var(--text);
+  border: 1px solid var(--border);
+  background: var(--bg-card);
+  font-size: 0.875rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.loading-spinner {
+  width: 20px;
+  height: 20px;
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  border-top-color: var(--accent);
+  animation: spin 1s linear infinite;
+  margin-right: 15px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  #header {
+    flex-direction: column;
+    gap: 16px;
+    align-items: flex-start;
+  }
+
+  #categoriesSelector {
+    width: 100%;
+  }
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
