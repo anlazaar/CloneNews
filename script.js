@@ -23,7 +23,10 @@ async function fetchData(url) {
 }
 
 // Format time
-const formatTime = (time) => new Date(time * 1000).toLocaleString();
+const formatTime = (time) => {
+  // console.log(time);
+  return new Date(time * 1000).toLocaleString();
+};
 
 // Debounce function
 const debounce = (callback, delay = 300) => {
@@ -36,7 +39,8 @@ const debounce = (callback, delay = 300) => {
 
 // Check if near bottom
 const isNearBottom = () =>
-  window.innerHeight + window.scrollY >= document.body.offsetHeight - 500;
+  parseInt(window.innerHeight + window.scrollY + 1) >=
+  document.body.offsetHeight;
 
 // Show loading state
 const showLoading = (show) => {

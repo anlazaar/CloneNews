@@ -4,7 +4,7 @@
   --bg-card: #1a1a1a;
   --accent: #ffffff;
   --text: #f0f0f0;
-  --text-secondary: #999999;
+  --text-secondary: #ead410;
   --border: #333333;
   --radius: 0;
   --font-sans: "IBM Plex Mono", monospace;
@@ -37,13 +37,13 @@ body {
   border-bottom: 1px solid var(--border);
 }
 
-#title {
-  color: var(--accent);
+#logo {
+  color: var(--text-secondary);
   text-decoration: none;
-  font-size: 1.25rem;
-  font-weight: 400;
+  font-size: 1.5rem;
+  font-weight: 800;
   cursor: pointer;
-  letter-spacing: -0.5px;
+  letter-spacing: -1.5px;
 }
 
 #categoriesSelector {
