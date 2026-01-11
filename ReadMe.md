@@ -1,8 +1,5 @@
-Thought for 4 seconds```markdown project="Cloner News" file="README.md"
-...
 
-````
-
+```
 clonernews/
 ├── index.html      # Main HTML structure
 ├── styles.css      # CSS styling
